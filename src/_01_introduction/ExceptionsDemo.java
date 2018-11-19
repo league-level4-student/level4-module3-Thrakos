@@ -15,6 +15,12 @@ public class ExceptionsDemo {
 		//    call to testMethod1 with a try/catch block.
 		//    In the catch block, put a print statement so you know
 		//    if the code is being ran.
+
+		try {
+			testMethod1(-1);
+		} catch (CustomException e) {
+			e.terminate();
+		}
 		
 		// 2. Now call testMethod1 with a value greater than 5. 
 		//    Running your program should not print the statement
@@ -32,12 +38,13 @@ public class ExceptionsDemo {
 		//    handle exceptions in unlimited ways.
 	}
 	
-	public static void testMethod1(int x) throws Exception {
+	public static void testMethod1(int x) throws CustomException {
 		if(x < 5) {
-			throw new Exception();
+			throw new CustomException();
 		}
 	}
 	
 	// 4. Create a static void method called testMethod2(int x) that throws
 	//    a CustomException if x is negative.
+	
 }
